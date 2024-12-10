@@ -1,16 +1,16 @@
-import React from 'react'
-import { Button } from './components/ui/button'
-import { ThemeProvider } from './components/theme-provider'
-import { ModeToggle } from './components/mode-toggle'
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from './components/theme-provider';
+import Portfolio from './Portfolio';
 
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <ModeToggle/>
-    <Button>App</Button>
+      <Router>
+        <Portfolio />
+      </Router>
     </ThemeProvider>
-    
-  )
+  );
 }
 
-export default App
+export default App;
