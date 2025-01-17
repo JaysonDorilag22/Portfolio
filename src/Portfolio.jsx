@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import ContactMe from './components/ContactMe';
 import { ModeToggle } from './components/mode-toggle';
+import Project from './components/Project';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -34,7 +35,7 @@ export default function Portfolio() {
         <Experience />
       </motion.div>
       <motion.div initial="hidden" animate="visible" variants={sectionVariants} transition={{ duration: 0.5, delay: 1.0 }}>
-        <Projects />
+        <Project />
       </motion.div>
       <motion.div initial="hidden" animate="visible" variants={sectionVariants} transition={{ duration: 0.5, delay: 1.2 }}>
         <ContactMe />
