@@ -8,7 +8,7 @@ export default function AboutMe() {
         About Me
       </h2>
       <p className="text-muted-foreground text-sm">
-        As a passionate MERN stack developer, I specialize in transforming complex data structures into intuitive, user-friendly web applications. With a keen eye for design and a love for clean code, I bring the best of both worlds to every project.
+      I am Jayson Dorilag, an IT student with a growing interest in software development. I am eager to apply my skills and gain practical experience in designing, developing, and maintaining real-world applications using modern tools and technologies
       </p>
     </section>
   );

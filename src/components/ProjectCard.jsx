@@ -1,75 +1,69 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import React from "react"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink } from "lucide-react"
-import { Button } from "./ui/button"
-export function ProjectCard({ logo, name, description, websiteImages, technologies, websiteUrl }) {
+import { Button } from "@/components/ui/button"
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselPrevious, 
+  CarouselNext 
+} from "@/components/ui/carousel"
+export function ProjectCard({ logo, name, description, technologies, websiteUrl,websiteImages }) {
   return (
-    <HoverCard>
-      <HoverCardTrigger asChild>
-        <Card className="w-40 h-40 flex items-center justify-center cursor-pointer transition-all duration-300 hover:shadow-lg">
-          <CardContent className="p-6">
-            <img 
-              src={logo || "/placeholder.svg"} 
-              alt={`${name} logo`} 
-              width={150} 
-              height={150} 
-              className="w-full h-auto" 
-            />
-          </CardContent>
-        </Card>
-      </HoverCardTrigger>
-      <HoverCardContent side="left" align="start" className="w-[400px] mb-3">
-        <div>
-          <Carousel>
-            <CarouselContent>
-              {websiteImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div>
-                    <img 
-                      src={image || "/placeholder.svg"} 
-                      alt={`${name} website ${index + 1}`} 
-                      width={300} 
-                      height={200} 
-                      className="w-full h-auto rounded-md" 
-                    />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-          <div>
-            <h3 className="text-lg font-semibold">{name}</h3>
-            <p className="text-sm text-muted-foreground">{description}</p>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold">Technologies:</h4>
-            <div className="flex flex-wrap gap-2 mt-1">
-              {technologies.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="pt-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="w-full flex items-center gap-2"
-              onClick={() => window.open(websiteUrl)}
-            >
-              Visit Website
-              <ExternalLink className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </HoverCardContent>
-    </HoverCard>
+    <Card className="w-[350px]">
+    <CardHeader>
+      <CardTitle className="flex justify-between items-center">
+        <span>{name}</span>
+        <img src={logo} alt={name} className="w-8 h-8" />
+      </CardTitle>
+    </CardHeader>
+  
+    <CardContent className="p-0">
+      <Carousel>
+        <CarouselContent>
+          {websiteImages.map((image, index) => (
+            <CarouselItem key={index}>
+              <img 
+                src={image} 
+                alt={`${name} screenshot ${index + 1}`} 
+                className="w-full h-48 object-cover"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </CardContent>
+  
+    <CardDescription className="p-4">
+      {description}
+    </CardDescription>
+  
+    <CardContent className="pt-0">
+      <div className="flex flex-wrap gap-2">
+        {technologies.map((tech, index) => (
+          <span 
+            key={index}
+            className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </CardContent>
+  
+    <CardFooter>
+      <Button 
+        variant="outline" 
+        className="w-full flex items-center gap-2"
+        onClick={() => window.open(websiteUrl, '_blank', 'noopener,noreferrer')}
+      >
+        Visit Website
+        <ExternalLink className="h-4 w-4" />
+      </Button>
+    </CardFooter>
+  </Card>
   )
 }

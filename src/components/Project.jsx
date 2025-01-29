@@ -33,8 +33,9 @@ export default function Project() {
   ]
 
   return (
-    <main className="container mx-auto py-12">
-      <h1 className="text-3xl font-bold mb-8">My Projects</h1>
+    <main className=" py-12">
+        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+        My Projects</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
