@@ -24,7 +24,7 @@ export default function Header() {
         Hi, I’m <span className="text-primary">Jayson Dorilag</span>!
       </h1>
       <p className="text-sm flex items-center">
-        Frontend Developer 
+        Aspiring Developer
       </p>
       <p className="text-sm text-muted-foreground flex items-center gap-2">
         Taguig, Philippines <img src="https://img.icons8.com/?size=100&id=15530&format=png&color=000000" alt="Philippines Flag" width={20} height={20} /> | 23 years old

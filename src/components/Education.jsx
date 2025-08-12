@@ -8,16 +8,6 @@ const educationData = [
     course: "Bachelor of Science in Information Technology",
     logo: "https://www.tupt.edu.ph/assets/images/logo.png" // Placeholder for the logo
   },
-  {
-    name: "Western Bicutan National High School",
-    status: "Junior and Senior High School",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Wbnhs_seal-removebg-preview.png" // Placeholder for the logo
-  },
-  {
-    name: "EM's Signal Village Elementary School",
-    status: "Elementary School",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHj3RKQ3LfXmVAJg14nA52FnNNYjRT4a1VmA&s" // Placeholder for the logo
-  }
 ];
 
 export default function Education() {

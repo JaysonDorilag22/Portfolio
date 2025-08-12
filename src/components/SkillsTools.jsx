@@ -12,6 +12,10 @@ const skills = [
   { name: "Laravel", logo: "https://img.icons8.com/?size=100&id=lRjcvhvtR81o&format=png&color=000000" },
   { name: "PHP", logo: "https://img.icons8.com/?size=100&id=anECpXcEIboQ&format=png&color=000000" },
   { name: "Figma", logo: "https://img.icons8.com/?size=100&id=zfHRZ6i1Wg0U&format=png&color=000000" },
+  { name: "Power Apps", logo: "https://img.icons8.com/?size=512&id=jXuZmZPUKCPS&format=png" },
+  { name: "Power BI", logo: "https://img.icons8.com/?size=100&id=qYfwpsRXEcpc&format=png&color=000000" },
+  { name: "Power Automate", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Microsoft_Power_Automate.svg/2048px-Microsoft_Power_Automate.svg.png" },
+  { name: "SharePoint", logo: "https://img.icons8.com/?size=100&id=VLKafOkk3sBX&format=png&color=000000" },
 ];
 
 export default function SkillsTools() {

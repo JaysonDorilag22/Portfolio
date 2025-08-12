@@ -1,44 +1,63 @@
-import { ProjectCard } from "./ProjectCard"
 import Resumify from "../assets/resumify/Resumify.png"
-import slide1 from "../assets/resumify/slide1.png"
-import slide2 from "../assets/resumify/slide2.png"
-import slide3 from "../assets/resumify/slide3.png"
-import slide4 from "../assets/resumify/slide4.png"
+import Agapay from "../assets/resumify/1.png"
+import { ExternalLink } from "lucide-react"
+
 export default function Project() {
   const projects = [
     {
       logo: Resumify,
       name: "Resumify",
       description: "A simple resume builder with export to word",
-      websiteImages: [
-        slide1,
-        slide2,
-        slide3,
-        slide4
-      ],
-      technologies: ["React"],
+      technologies: ["React", "TailwindCSS", "Vite"],
       websiteUrl: "https://resume-builder-k0f3.onrender.com/"
     },
-    // {
-    //   logo: "/placeholder.svg?height=150&width=150",
-    //   name: "Project B",
-    //   description: "An e-commerce platform with advanced product recommendation system.",
-    //   websiteImages: [
-    //     "/placeholder.svg?height=200&width=300",
-    //     "/placeholder.svg?height=200&width=300",
-    //     "/placeholder.svg?height=200&width=300",
-    //   ],
-    //   technologies: ["Vue.js", "Node.js", "MongoDB", "AWS"],
-    // },
+    {
+      logo: Agapay,
+      name: "Agapay Alert",
+      description: "Emergency alert and notification system",
+      technologies: ["MongoDB", "Express", "React", "Node.js"],
+      websiteUrl: "https://agapayalert-web.onrender.com/"
+    }
   ]
 
   return (
-    <main className=" py-12">
-        <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
-        My Projects</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <main className="py-12">
+      <h2 className="text-2xl font-semibold mb-8 flex items-center gap-2">
+        🗂️ My Projects
+      </h2>
+      <div className="space-y-6">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <div key={index} className="border rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div className="flex items-start gap-4">
+              <img 
+                src={project.logo} 
+                alt={project.name} 
+                className="w-12 h-12 object-contain rounded-md"
+              />
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
+                <p className="text-gray-600 mb-3">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span 
+                      key={tech} 
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a 
+                  href={project.websiteUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  Visit Website <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </main>
